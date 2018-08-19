@@ -90,15 +90,13 @@ export default {
       var xhr = new XMLHttpRequest();
 
       var mode = "";
-      var book_id = "";
       var params = "";
 
       if (item.ID != undefined) {
         vm.$data.edit = 0;
-        book_id = "/" + item.ID;
-        params = "Title=" + item.Title + "&Author=" + item.Author;
+        params = "ID=" + item.ID + "&Title=" + item.Title + "&Author=" + item.Author;
         mode = "PUT";
-        console.log(book_id, params);
+        console.log(params);
       } else {
         params =
           "Title=" +
@@ -118,7 +116,7 @@ export default {
 
       this.isLoading = false;
 
-      xhr.open(mode, this.rest_url + "/books" + book_id, true);
+      xhr.open(mode, this.rest_url + "/books", true);
       xhr.setRequestHeader(
         "Content-Type",
         "application/x-www-form-urlencoded; charset=UTF-8"
