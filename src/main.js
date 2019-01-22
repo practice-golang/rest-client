@@ -7,6 +7,8 @@ Vue.use(VueRouter)
 import TplAbout from './components/about.vue'
 import TplBooks from './components/books.vue'
 
+Vue.config.productionTip = false
+
 const router = new VueRouter({
   mode: 'history',
   routes: [
@@ -16,7 +18,6 @@ const router = new VueRouter({
 })
 
 new Vue({
-  el: '#app',
   router,
-  render: h => h(App)
-})
+  render: h => h(App),
+}).$mount('#app')
